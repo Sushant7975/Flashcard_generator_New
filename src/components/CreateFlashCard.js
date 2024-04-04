@@ -78,7 +78,7 @@ const CreateFlashCard = () => {
   return (
     <div>
       <ToastContainer />
-      <div className="w-9/12 m-auto mt-2 py-5">
+      <div className="w-4/5 m-auto mt-2 py-5">
         <Formik
           initialValues= {initialValues}
           validationSchema= {validationSchema}
@@ -86,14 +86,15 @@ const CreateFlashCard = () => {
         >
           {({ values, setFieldValue }) => (
             <Form>
-              <div className="flex flex-col shadow-md p-3 border-2">
+              <div className="flex flex-col flex-wrap shadow-md p-10 border-2">
+                
                 <label
                   className="text-zinc-500 font-bold text-lg"
                   htmlFor="groupName"
                 >
-                  Group Name*
+                  Create Group*
                 </label>
-
+                <div className="flex flex-wrap">
                 <Field
                   type="text"
                   id="groupName"
@@ -108,7 +109,7 @@ const CreateFlashCard = () => {
                   className="text-red-500"
                 />
 
-                <div>
+               
                   {/* it's a image upload button 
                   if image is present it's shows the image preview with delete icon to delete image
                   if image is not present its shows image uploading button */}
@@ -128,7 +129,7 @@ const CreateFlashCard = () => {
                   ) : (
                     <label
                       htmlFor="uploadimage"
-                      className="w-44 h-[38px]  cursor-pointer px-3 mx-3 mt-8 py-1 bg-gray-200 border-gray-200 flex  items-center justify-center  rounded"
+                      className="w-40 h-10  cursor-pointer p-2 mt-2 mx-10 bg-gray-200 border-gray-200 flex  items-center justify-center  rounded"
                     >
                       <FaFileUpload className=" text-[1.8em] text-blue-700 p-1" />  
                       <span className="text-blue-700 font-bold">
@@ -166,7 +167,9 @@ const CreateFlashCard = () => {
                     name="uploadimage"
                     id="uploadimage"
                     type="file"
-                  />
+                      />
+                     
+                    
                 </div>
 
                 <label
